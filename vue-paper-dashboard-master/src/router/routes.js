@@ -10,6 +10,9 @@ import Icons from "@/pages/Icons.vue";
 import Maps from "@/pages/Maps.vue";
 import Typography from "@/pages/Typography.vue";
 import TableList from "@/pages/TableList.vue";
+import ListaVisitantes from "@/pages/TableListv.vue";
+import ListaReservas from "@/pages/TableListr.vue";
+
 
 const routes = [
   {
@@ -52,6 +55,16 @@ const routes = [
         name: "table-list",
         component: TableList,
       },
+      {
+        path: "table-listv",
+        name: "table-listv",
+        component: ListaVisitantes,
+      },
+      {
+        path: "table-listr",
+        name: "table-listr",
+        component: ListaReservas,
+      }
     ],
   },
   { path: "*", component: NotFound },

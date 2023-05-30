@@ -1,20 +1,21 @@
 <template>
-  <div class="row">
-    <div class="col-12">
-      <card :title="table1.title" :subTitle="table1.subTitle">
-        <div slot="raw-content" class="table-responsive">
-          <paper-table :data="table1.data" :columns="table1.columns">
-          </paper-table>
-        </div>
-      </card>
+    <div class="row">
+      <div class="col-12">
+        <card :title="table1.title" :subTitle="table1.subTitle">
+          <div slot="raw-content" class="table-responsive">
+            <paper-table :data="table1.data" :columns="table1.columns">
+            </paper-table>
+          </div>
+        </card>
+      </div>
+  
+      
     </div>
-
-    
-  </div>
-</template>
-<script>
-import { PaperTable } from "@/components";
-
+  </template>
+  <script>
+  import { PaperTable } from "@/components";
+  
+  
 export default {
   components: {
     PaperTable,
@@ -22,9 +23,9 @@ export default {
   data() {
     return {
       table1: {
-        title: "Guias",
+        title: "Visitantes",
         subTitle: "",
-        columns: ["Nome", "Linguagens", "Cidade", "Numero de Tours"],
+        columns: ["Nome", "Pais", "Profissao", "Contacto", "Email"],
         data: [],
       },
       novoProfissional: {
@@ -38,13 +39,13 @@ export default {
   },
   methods: {
     carregarDados() {
-      const data = localStorage.getItem("guias");
+      const data = localStorage.getItem("visitantes");
       if (data) {
         this.table1.data = JSON.parse(data);
       }
     },
     salvarDados() {
-      localStorage.setItem("guias", JSON.stringify(this.table1.data));
+      localStorage.setItem("visitantes", JSON.stringify(this.table1.data));
     },
     adicionarProfissional() {
       if (this.validarFormulario()) {

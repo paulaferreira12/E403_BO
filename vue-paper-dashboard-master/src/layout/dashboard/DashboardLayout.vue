@@ -4,13 +4,10 @@
       <template slot="links">
         <sidebar-link to="/dashboard" name="Estatísticas Gerais" icon="ti-panel" />
         <sidebar-link to="/stats" name="Perfil Administrador" icon="ti-user" />
-        <sidebar-link
-          to="/table-list"
-          name="Lista de Guias"
-          icon="ti-view-list-alt"
-        />
+        <sidebar-link to="/table-list" name="Lista de Guias" icon="ti-view-list-alt"/>
+        <sidebar-link to="/table-listv" name="Lista de Visitantes" icon="ti-view-list-alt"/>
         <sidebar-link to="/typography" name="Cidades" icon="ti-map" />
-        <sidebar-link to="/icons" name="Reservas" icon="ti-view-list-alt" />
+        <sidebar-link to="/table-listr" name="Reservas" icon="ti-view-list-alt" />
         <!--<sidebar-link to="/maps" name="Map" icon="ti-map" />-->
         <sidebar-link to="/notifications" name="Notificações" icon="ti-bell" />
       </template>

@@ -1,4 +1,4 @@
-<template>
+<!--<template>
   <div class="row">
     <div class="col-md-12">
       <card>
@@ -74,9 +74,9 @@
             </p>
           </div>
           <div class="typo-line">
-            <!--
+            
                there are also "text-info", "text-success", "text-warning", "text-danger" clases for the text
-               -->
+               
             <p class="category">Coloured Text</p>
             <p class="text-primary">
               Text Primary - Light Bootstrap Table Heading and complex bootstrap
@@ -198,4 +198,69 @@
 <script>
 export default {};
 </script>
-<style></style>
+<style></style>-->
+
+<template>
+  <div class="square-container">
+    <div v-for="square in squares" :key="square.id" class="square">
+      <img :src="square.imagem1" class="square-image" alt="Square Image" />
+      <div class="square-text">
+        <!--<p>{{ square.nome }}</p>-->
+        <p>{{ square.nome1 }}</p>
+        <p>{{ square.pais }}</p>
+      </div>
+      <div class="square-buttons">
+        <!--<button class="button">{{ square.descricao }}</button>-->
+        <button class="button">Button 2</button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      squares: [],
+    };
+  },
+  mounted() {
+    const localStorageData = JSON.parse(localStorage.getItem('cidades'));
+    if (Array.isArray(localStorageData)) {
+      this.squares = localStorageData;
+    }
+  },
+};
+</script>
+
+<style scoped>
+.square-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.square {
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.square-image {
+  width: 100%;
+  height: auto;
+}
+
+.square-text {
+  margin-top: 10px;
+}
+
+.square-buttons {
+  margin-top: 10px;
+}
+
+.button {
+  margin-right: 5px;
+}
+</style>
+
